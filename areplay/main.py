@@ -66,11 +66,11 @@ def worker(args, line, line_parser):
             url = args.ignore_url
         if not args.dry_run:
             r = requests.get(url, auth=args.auth, verify=args.verify, headers=headers)
-            print '%s %s' % (url, r.status_code)
+            print('{} {}'.format(url, r.status_code))
         else:
-            print '[dry run] %s' % (url)
+            print('[dry run] {}'.format(url))
     else:
-        print '[ignored] %s' % (url)
+        print('[ignored] {}'.format(url))
 
 
 def reader(args):
